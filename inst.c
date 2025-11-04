@@ -171,7 +171,7 @@ char *instructionText[] =
  * @param display The display of the X11 window
  * @param window the X11 window to draw on
  */
-//dont delete, needs to be replaced (replace strcpy w instructiontect[i])
+//removed all strcpy mentions, removed char strin[80], and
 
 static void DoText(Display *display, Window window)
 {
@@ -191,7 +191,6 @@ static void DoText(Display *display, Window window)
 		/* If the text is not null then print it */
 		if (instructionText[i] != '\0')
 		{
-			strcpy(string, instructionText[i]);// [DOXYGEN] Unnecessary string copy, could be removed.
 			DrawShadowCentredText(display, window, dataFont, 
 				string, y, j % 2 ? greens[0] : greens[2], PLAY_WIDTH);
 			y += dataFont->ascent + GAP;
@@ -204,9 +203,9 @@ static void DoText(Display *display, Window window)
 	y += dataFont->ascent + GAP/2;
 
 	/* Draw the standard message */
-	strcpy(string, "Insert coin to start the game");
-	DrawShadowCentredText(display, window, textFont, string, 
-		PLAY_HEIGHT - 40, tann, PLAY_WIDTH);
+	
+	DrawShadowCentredText(display, window, textFont,
+			      "Insert coin to start the game", PLAY_HEIGHT - 40, tann, PLAY_WIDTH);
 }
 
 /**
