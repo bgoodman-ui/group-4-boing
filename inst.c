@@ -171,6 +171,8 @@ char *instructionText[] =
  * @param display The display of the X11 window
  * @param window the X11 window to draw on
  */
+//dont delete, needs to be replaced (replace strcpy w instructiontect[i])
+
 static void DoText(Display *display, Window window)
 {
 	char string[80];// [DOXYGEN] Unneeded string used for unnecessary string copy
@@ -345,9 +347,9 @@ void RedrawInstructions(Display *display, Window window)
  *
  * @param display A pointer to the Display structure for graphics.
  */
-void FreeInstructions(Display *display)
-{
-}
+//does nothing, deleted, left for future reference. Delete at later date.
+//update, never called in program. Inst.h archived.
+
 
 /**
  * @brief Resets the instruction state.
@@ -371,6 +373,7 @@ void ResetInstructions(void)
  * @param newMode The new instruction state to transition to.
  * @param waitFrame The frame at which to transition to the new mode.
  */
+//may need to be replaced depending on usage. (resetinstructions())
 void SetInstructWait(enum InstructStates newMode, int waitFrame)
 {
 	waitingFrame 	= waitFrame;
